@@ -38,19 +38,20 @@ public class MainActivity extends Activity
 			Paint paint = new Paint();
 			paint.setStyle(Paint.Style.FILL);
 
-			// make the entire canvas white
-			paint.setColor(Color.WHITE);
+			// make the entire canvas YELLOW
+			paint.setColor(Color.YELLOW);
 			canvas.drawPaint(paint);
 
-			// draw blue circle with anti aliasing turned off
+			// draw RED circle with anti aliasing turned off
 			paint.setAntiAlias(false);
-			paint.setColor(Color.BLUE);
+			paint.setColor(Color.RED);
 			canvas.drawCircle(20, 20, 15, paint);
 
-			// draw black rectangle with anti aliasing turned off
+			// draw BLACK rectangle with anti aliasing turned off
 			paint.setAntiAlias(false);
 			paint.setColor(Color.BLACK);
 			canvas.drawRect(100, 5, 200, 30, paint);
+			
 
 		}
 	}
