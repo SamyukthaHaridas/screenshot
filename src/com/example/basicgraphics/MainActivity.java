@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
 		public DemoView(Context mcontext) {
 			super(mcontext);
 		}
+ 
 		@Override
 		protected void onDraw(Canvas canvas) {
 			super.onDraw(canvas);
@@ -61,5 +62,12 @@ public class MainActivity extends Activity {
 			canvas.restore();
 		}
 	}
-		
  
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+ 
+}
