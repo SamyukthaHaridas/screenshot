@@ -1,85 +1,68 @@
 package com.example.basicgraphics;
 
-import android.content.Intent;
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;  
-
-
-public class MainActivity extends ActionBarActivity {
-	Button rect,sq,cir,str;
-	TextView text;
-	EditText ed1;
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        rect=(Button) findViewById(R.id.rect);
-        sq=(Button) findViewById(R.id.sq);
-        cir=(Button) findViewById(R.id.cir);
-        str=(Button) findViewById(R.id.str);
-        text=(TextView) findViewById(R.id.text);
-        ed1=(EditText) findViewById(R.id.ed1);
-        
-        
-        rect.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				String data="rectangle";
-				String val=ed1.getText().toString();
-				Intent i=new Intent(MainActivity.this,SecondActivity.class);
-				i.putExtra("value", data);
-				i.putExtra("dim", data);
-				startActivity(i);
-			}
-		});
-        sq.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				String val=ed1.getText().toString();
-				String data="square";
-				Intent i=new Intent(MainActivity.this,SecondActivity.class);
-				i.putExtra("value", data);
-				i.putExtra("dim", data);
-				startActivity(i);
-			}
-		});
-        cir.setOnClickListener(new View.OnClickListener() {
-		
-		@Override
-		public void onClick(View arg0) {
-			String val=ed1.getText().toString();
-			String data="circle";
-			Intent i=new Intent(MainActivity.this,SecondActivity.class);
-			i.putExtra("value", data);
-			i.putExtra("dim", data);
-			startActivity(i);
+ 
+public class MainActivity extends Activity {
+ 
+	DemoView demo;
+ 
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		demo = new DemoView(this);
+		setContentView(demo);
+	}
+ 
+	private class DemoView extends View {
+		public DemoView(Context mcontext) {
+			super(mcontext);
 		}
-	});
-        str.setOnClickListener(new View.OnClickListener() {
-		
+ 
 		@Override
-		public void onClick(View arg0) {
-			String val=ed1.getText().toString();
-			String data="string";
-			Intent i=new Intent(MainActivity.this,SecondActivity.class);
-			i.putExtra("value", data);
-			i.putExtra("dim", data);
-			startActivity(i);
+		protected void onDraw(Canvas canvas) {
+			super.onDraw(canvas);
+ 
+			// custom drawing code here
+			Paint paint = new Paint();
+			paint.setStyle(Paint.Style.FILL);
+ 
+			// make the entire canvas white
+			paint.setColor(Color.WHITE);
+			canvas.drawPaint(paint);
+ 
+			// draw blue circle with anti aliasing turned off
+			paint.setAntiAlias(false);
+			paint.setColor(Color.BLUE);
+			canvas.drawCircle(20, 20, 15, paint);
+ 
+			// draw green circle with anti aliasing turned on
+			paint.setAntiAlias(true);
+			paint.setColor(Color.RED);
+			canvas.drawCircle(60, 20, 15, paint);
+ 
+			// draw red rectangle with anti aliasing turned off
+			paint.setAntiAlias(false);
+			paint.setColor(Color.LTGRAY);
+			canvas.drawRect(100, 5, 200, 30, paint);
+ 
+			
+ 
+			
 		}
-	});
-    
-    
-    
-
-    }
+	}
+ 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+ 
 }

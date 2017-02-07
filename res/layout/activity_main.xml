@@ -6,62 +6,87 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.graphics.MainActivity" >
+    tools:context="com.example.shapes.MainActivity" >
 
-    <EditText
-        android:id="@+id/ed1"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text1"
+        android:text="Enter the dimension" />
+
+    <EditText
+        android:id="@+id/ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="44dp"
+        android:layout_marginTop="40dp"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/b1"
+        android:layout_alignBottom="@+id/b1"
+        android:layout_alignRight="@+id/ed"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/b1"
+        android:text="Circle" />
+
+    <Button
+        android:id="@+id/b4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/b3"
+        android:layout_alignBottom="@+id/b3"
+        android:layout_alignLeft="@+id/b2"
+        android:text="Triangle" />
+
+    <EditText
+        android:id="@+id/ed2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ed"
         android:layout_centerHorizontal="true"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ed2"
+        android:layout_below="@+id/l"
+        android:layout_marginTop="66dp"
+        android:text="Rectangle" />
+
+    <EditText
+        android:id="@+id/b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/b2"
+        android:layout_below="@+id/l"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/b4"
+        android:layout_below="@+id/ed2"
         android:ems="10" >
 
         <requestFocus />
     </EditText>
 
     <Button
-        android:id="@+id/sq"
+        android:id="@+id/b3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ed1"
-        android:layout_marginRight="14dp"
-        android:text="square" />
-
-    <Button
-        android:id="@+id/cir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/rect"
-        android:layout_below="@+id/rect"
-        android:layout_marginRight="14dp"
-        android:text="Circle" />
-
-    <Button
-        android:id="@+id/str"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/cir"
-        android:layout_alignBottom="@+id/cir"
-        android:layout_alignLeft="@+id/sq"
-        android:text="String" />
-
-    <Button
-        android:id="@+id/rect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/sq"
-        android:layout_alignBottom="@+id/sq"
-        android:layout_marginLeft="17dp"
-        android:layout_toRightOf="@+id/sq"
-        android:text="Rectangle" />
-
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
-        android:text="Enter the dimension and Choose the shape" />
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/b1"
+        android:layout_marginTop="24dp"
+        android:text="Square" />
 
 </RelativeLayout>
