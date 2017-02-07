@@ -6,11 +6,62 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.basicgraphics.MainActivity" >
+    tools:context="com.example.graphics.MainActivity" >
 
-    <TextView
+    <EditText
+        android:id="@+id/ed1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_below="@+id/text1"
+        android:layout_centerHorizontal="true"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/sq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ed1"
+        android:layout_marginRight="14dp"
+        android:text="square" />
+
+    <Button
+        android:id="@+id/cir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/rect"
+        android:layout_below="@+id/rect"
+        android:layout_marginRight="14dp"
+        android:text="Circle" />
+
+    <Button
+        android:id="@+id/str"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/cir"
+        android:layout_alignBottom="@+id/cir"
+        android:layout_alignLeft="@+id/sq"
+        android:text="String" />
+
+    <Button
+        android:id="@+id/rect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sq"
+        android:layout_alignBottom="@+id/sq"
+        android:layout_marginLeft="17dp"
+        android:layout_toRightOf="@+id/sq"
+        android:text="Rectangle" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:text="Enter the dimension and Choose the shape" />
 
 </RelativeLayout>
