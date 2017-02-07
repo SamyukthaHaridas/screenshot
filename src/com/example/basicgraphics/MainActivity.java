@@ -55,8 +55,7 @@ public class MainActivity extends Activity {
 			// draw the rotated text
 			canvas.rotate(-40);
  
-			paint.setStyle(Paint.Style.FILL);
-			canvas.drawText("Graphics Rotation", 45, 185, paint);
+			
  
 			// undo the rotate
 			canvas.restore();
